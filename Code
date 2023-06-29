@@ -1,0 +1,53 @@
+<h1>Computer Science</h1>
+
+<dl>
+  <dt>Software Engineering - </dt>
+  <dd>Software engineering is an engineering-based approach to software development.</dd>
+  <br>
+  <dt>Computer Programming - </dt>
+  <dd>Computer programming is the process of performing particular computations, usually by <br> designing and building executable computer programs.</dd>
+  <br>
+  <dt>Computer Engineering - </dt>
+  <dd>Computer engineering is a branch of electrical engineering and computer science that integrates <br> several fields of computer science and electronic engineering required to develop computer <br> hardware and software.</dd>
+  <br>
+  <dt>Computer Network - </dt>
+  <dd>A computer network is a set of computers sharing resources located on or provided by network <br> nodes.</dd>
+</dl>
+<p class = paragraphs>What degree / pathway do you choose?</p>
+<input type = "text"></input>
+<br>
+<br>
+<button id = "degreeButton">Select Degree / Pathway</button>
+
+<img src = "https://iibawards-prod.s3.amazonaws.com/projects/images/000/002/333/large.png?1505504208">
+
+.paragraphs{font-size: 140%;}
+
+#degreeButton{
+  background-color: lightgreen;
+  width: 110px;
+  height: 40px;
+  border-radius:5%;
+  position:static;
+}
+
+img {
+  position: absolute;
+  bottom:450px;
+  right:250px;
+  width:35%;
+  height:40%;
+}
+
+const button = document.getElementsByTagName("button")[0];
+let input = "";
+button.addEventListener("click",function(){
+  input = document.getElementsByTagName("input")[0];
+  alert("You have selected " + input.value + ".");
+});
+
+async function fetchAsync() {
+  let response = await fetch("https://en.wikipedia.org/wiki/Computer_science");
+  let data = await response.json();
+  return data;
+}
